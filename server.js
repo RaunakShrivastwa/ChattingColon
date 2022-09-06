@@ -13,9 +13,18 @@ http.listen(PORT, ()=>{
 app.use(express.static(__dirname+'/public'))
 
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname+ '/index.html')
+    res.sendFile(__dirname+ '/login.html')
+})
+app.get('/about.html',(req,res)=>{
+  res.sendFile(__dirname+ '/about.html')
+})
+app.get('/login.html',(req,res)=>{
+  res.sendFile(__dirname+ '/login.html')
 })
 
+app.get('/index.html',(req,res)=>{
+  res.sendFile(__dirname+ '/index.html')
+})
 // socket
 
 const io=require('socket.io')(http)
@@ -24,5 +33,7 @@ io.on('connection',(socket)=>{
    console.log('connected');
    socket.on('message',(msg)=>{
      socket.broadcast.emit('message',msg)
+    
    })
 })
+
