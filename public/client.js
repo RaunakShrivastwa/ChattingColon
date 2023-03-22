@@ -9,7 +9,7 @@ let messagearea=document.querySelector('.message_area')
 let name1;
 
 do{
-name1=prompt('Enter your NAme:-')
+name1=prompt('Enter Name For Chatting:-')
 }while(!name1)
 
 const text=document.querySelector('#text');

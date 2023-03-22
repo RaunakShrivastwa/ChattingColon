@@ -3,12 +3,14 @@ const app=express()
 
 const http=require('http').createServer(app)
 
-const PORT=process.env.PORT || 3000
+const PORT=process.env.PORT || 2000
 
 http.listen(PORT, ()=>{
     console.log('Listining on port',PORT)
 })
 
+
+console.log(__dirname)
 
 app.use(express.static(__dirname+'/public'))
 
